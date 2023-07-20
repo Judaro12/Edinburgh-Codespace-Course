@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom activity 2 </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <h3>Input a radius value and get the Volume of a Sphere </h3>
+    
+    <form class="colum">
+        <div class="col-3">
+            <label for="input" class="form-label">Radius</label>
+            <input type="text" class="form-control" id="inputRadius" Placeholder="enter radius">
+        </div>
+        <div class="col-3">
+            <label for="input" class="form-label">Volume</label>
+            <input type="text" class="form-control"id="showvolume" placeholder= "result" readonly> 
+            
+
+        </div>   
+        <div class="d-grid gap-2"></div>    
+ 
+        <button type="button" onclick="calculateSphereVolume()" class="btn btn-warning btn-sm">Submit</button>       
+    </form>
+    
+   <script> function calculateSphereVolume(){
+    
+    // getting the input value from the form
+     const radiusInput = document.getElementById("inputRadius");
+     const radius = parseFloat(radiusInput.value);
+
+        if (radius <= 0){
+            radiusInput.value="";
+            radiusInput.placeholder = "radius must be a possitive.";
+
+            return; 
+        }   
+    
+        const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+         
+
+        const showVolume = document.getElementById("showvolume");
+        showVolume.placeholder = String(volume);
+   
+    }
+   
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
